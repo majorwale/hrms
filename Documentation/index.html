@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- 
+* Workday - A time clock application for employees
+* URL: https://codecanyon.net/item/workday-a-time-clock-application-for-employees/23076255
+* Support: official.codefactor@gmail.com
+* Version: 3.5
+* Author: Brian Luna
+* Copyright 2021 Codefactor
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Documentation | Workday Time Clock</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+</head>
+
+<body>
+    <section class="content">
+        <div class="content-wrap">
+            <div class="row">
+                <div class="menu-box">
+                    <h1 class="assert-logo text-center text-bold">Workday</h1>
+                    <nav class="menu-nav">
+                        <ul>
+                            <li><a href="#start" class="current">Getting Started</a>
+                                <ul class="secondarynav">
+                                    <li><a href="#systemrequirement">System Requirements</a></li>
+                                    <li><a href="#installation">Installation</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#dashboard">Dashboard</a></li>
+                            <li><a href="#company">Company</a></li>
+                            <li><a href="#department">Department</a></li>
+                            <li><a href="#jobtitle">Job Title</a></li>
+                            <li><a href="#employees">Employees</a>
+                                <ul class="secondarynav">
+                                    <li><a href="#employees-profile">Employee Profile</a></li>
+                                    <li><a href="#employees-edit-profile">Editing Employee Profile</a></li>
+                                    <li><a href="#employees-add-employee">Adding Employee Profile</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#attendance">Attendance</a>
+                                <ul class="secondarynav">
+                                    <li><a href="#admin-smartclock">Web Clock (In/Out)</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#schedules">Schedules</a>
+                                <ul class="secondarynav">
+                                    <li><a href="#admin-adding-schedule">Adding Schedules</a></li>
+                                    <li><a href="#admin-editing-schedule">Editing Schedules</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#leaves">Leave of Absence</a>
+                                <ul class="secondarynav">
+                                    <li><a href="#admin-editing-leave">Editing Employee Leave</a></li>
+                                    <li><a href="#admin-adding-leavetype">Adding Leave Type</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#reports">Reports</a></li>
+                            <li><a href="#users">Users</a></li>
+                            <li><a href="#settings">Settings</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="content-info">
+                    <div class="section-txt" id="start">
+                        <h3>Getting Started</h3>
+                        <p>Thank you for purchasing <strong>Workday</strong>. Workday a web based time clock app for accurate clock-in and clock-out. No more paper time cards. No expensive hardware. Hassle free attendance management.</p>
+                        <p>If you have any question about Workday please feel free to contact with us.
+                            If you need support, customization or feature request, you may email to us at official.codefactor@gmail.com</p>
+                        <h5 id="systemrequirement">System Requirements</h5>
+                        <ul>
+                            <li><span class="code">PHP</span> version 8.0.2 or higher</li>
+                            <ul>
+                                <li><span class="code">OpenSSL</span> PHP Extension</li>
+                                <li><span class="code">PDO</span> PHP Extension</li>
+                                <li><span class="code">Mbstring</span> PHP Extension</li>
+                                <li><span class="code">Tokenizer</span> PHP Extension</li>
+                                <li><span class="code">Ctype</span> PHP Extension</li>
+                                <li><span class="code">JSON</span> PHP Extension</li>
+                            </ul>
+                            <li><span class="code">MySQL</span> 5.x or higher</li>
+                            <li><span class="code">Nginx</span> or <span class="code">Apache</span> (recommended http server)</li>
+                        </ul>
+                        <h5 id="installation">Installation</h5>
+                        <ul class="decimal">
+                            <li> Unzip the Download file from Codecanyon. You will find two folders, one folder contains Documentation & another is Application Files.</li>
+                            <li> Upload the entire Application Files folder to your website or server.</li>
+                            <li> Next you can rename the folder to whatever you like (HR, WORKDAY etc.)</li>
+                            <li> Create a database user in your MySQL server and create a new blank database.
+                                <p><img src="images/phpmyadmin-add-user.png" alt="phpmyadmin create user" class="interface"></p>
+
+                                <p>Then import the database file from /Application/database/ folder named <span class="code">database.sql</span> to your new empty database</p>
+
+                                <p><img src="images/phpmyadmin-import-database.png" alt="phpmyadmin import database" class="interface"></p>
+
+                                <p>Grant the new user with all necessary permissions to the new database on your MySQL server.</p>
+                                <p><img src="images/phpmyadmin-edit-user-permissions.png" alt="phpmyadmin edit permissions" class="interface"></p>
+
+                                <p>Use phpMyAdmin to simplify the operation.</p>
+                            </li>
+                            <li> Now visit the application folder. A sample <strong>.env.example</strong> config file is available here, rename the file to <strong>.env</strong> 
+                                <img src="images/edit-env-file.png" alt="env rename" class="interface">
+                                <p>Open <strong>.env</strong> file with your text editor and fill the database name <span class="code">DB_DATABASE=mydatabase</span>, username <span class="code">DB_USERNAME=myuser</span> and password <span class="code">DB_PASSWORD=mypassword</span>. </p>
+                                <img src="images/edit-env-file-add-database-config.png" alt="env edit config" class="interface">
+                            </li>
+                            <li> Next, please visit <strong>yourdomain.com/yourfolder</strong> or <strong>http://localhost/yourfolder</strong> to browse the web application.</li>
+                            <li> Use demo accounts for first time login. Login with username: <span class="code">manager@example.com</span> and password: <span class="code">demo12345</span>. You may delete the demo manager and employee user account after creating a new manager type account.</li>
+                        </ul>
+                        <p>Installation Guide for cPanel</p>
+                        <ul class="decimal">
+                            <li>
+                                Upload the entire Application files folder to your server using the File manager in your cPanel. To speed up the proccess compress the application files folder into application.zip, and then once uploaded in your server unzip the compressed file using the File manager.
+                                <p><img src="cpanel/cpanel-file-manager-upload-file.png" alt="cpanel upload file" class="interface"></p>
+                                <p><img src="cpanel/cpanel-file-manager-uploaded-files.png" alt="cpanel uploaded files" class="interface"></p>
+                            </li>
+                            <li>
+                                Create a new database named "yourserver_workday" using cPanel MySQL Databases Administration.
+                                <p><img src="cpanel/cpanel-mysql-create-database.png" alt="cpanel create database" class="interface"></p>
+                            </li>
+                            <li>
+                                Create a new user named "yourserver_workday_user" using cPanel MySQL Users Administration.
+                                <p><img src="cpanel/cpanel-mysql-create-user.png" alt="cpanel create user" class="interface"></p>
+                            </li>
+                            <li>
+                                Give "yourserver_workday_user" database-user privileges to administer "yourserver_workday" database using cPanel Add User To Database feature.
+                                <p><img src="cpanel/cpanel-mysql-add-user-to-database.png" alt="cpanel add user database privileges" class="interface"></p>
+                            </li>
+                            <li>
+                                Import "/application/database/database.sql" file to "yourserver_workday" database using phpMyAdmin.
+                                <p><img src="cpanel/cpanel-phpmyadmin-import-database.png" alt="cpanel import database using phpmyadmin" class="interface"></p>
+                            </li>
+                            <li>
+                                Edit the "/application/.env.example" file. Rename this file to .env. Then, add database connection credentials.
+                                <p><img src="cpanel/cpanel-filemanager-edit-env-file.png" alt="cpanel rename .env.example file" class="interface"></p>
+                                <p><img src="cpanel/cpanel-filemanager-edit-env-save.png" alt="cpanel edit .env file to add database connection credentials" class="interface"></p>
+                            </li>
+                            <li>
+                                Thats all. The installation process was simple. Browse your new application at https://yourdomain.com
+                            </li>
+                            <li>
+                                Use demo accounts for first time login. Login with username: <span class="code">manager@example.com</span> and password: <span class="code">demo12345</span>. You may delete the demo manager and employee user account after creating a new manager type account.
+                            </li>
+                        </ul>
+                        <p>If you need technical support or feature request, you may email to us at official.codefactor@gmail.com</p>
+                    </div>
+                    <div class="section-txt" id="dashboard">
+                        <h3>Dashboard</h3>
+                        <img src="interface/admin-dashboard.png" alt="admin dashboard" class="interface">
+                        <p>Dashboard will provide you an overview of the application's key information.</p>
+                        <ul class="decimal">
+                            <li>Shows the total number of Regular and Trainee Employees.</li>
+                            <li>Shows the total number of Online and Offline Employees.</li>
+                            <li>Shows the total number of Approved and Pending Leave requests.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="company">
+                        <h3>Company</h3>
+                        <img src="interface/admin-company.png" alt="admin company" class="interface">
+                        <ul class="decimal">
+                            <li>To add a company, type Company name in the input box and click on SAVE button to add a Company.</li>
+                            <li>Click on DELETE button to delete Company name.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="department">
+                        <h3>Department</h3>
+                        <img src="interface/admin-departments.png" alt="admin department" class="interface">
+                        <ul class="decimal">
+                            <li>To add a department, type department name in the input box and click on SAVE button to add a Department.</li>
+                            <li>Click on DELETE button to delete Department name.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="jobtitle">
+                        <h3>Job Title</h3>
+                        <img src="interface/admin-jobtitles.png" alt="admin jobtitle" class="interface">
+                        <ul class="decimal">
+                            <li>To add a job title, type job title name in the input box and click on SAVE button to add a Job Title.</li>
+                            <li>Click on DELETE button to delete Job Title name.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="employees">
+                        <h3>Employees</h3>
+                        <img src="interface/admin-employees.png" alt="admin employees" class="interface">
+                        <ul class="decimal">
+                            <li>Click VIEW button to view Employee profile</li>
+                            <li>Click EDIT button to edit Employee information</li>
+                            <li>Click on DELETE button to delete Employee profile and account.</li>
+                            <li>Click ARCHIVE button to archive the Employee profile and account.</li>
+                            <li>Click ADD button to add new Employee.</li>
+                        </ul>
+                        <h5 id="employees-profile">Employee Profile</h5>
+                        <img src="interface/admin-employee-profile.png" alt="admin view employees" class="interface">
+                        <ul class="decimal">
+                            <li>Click on RETURN button to visit previous page.</li>
+                        </ul>
+                        <h5 id="employees-edit-profile">Edit Employee Profile</h5>
+                        <img src="interface/admin-edit-employee-profile.png" alt="admin edit employees" class="interface">
+                        <ul class="decimal">
+                            <li>Click on RETURN button to visit previous page.</li>
+                            <li>Insert all related Employee information.</li>
+                            <li>Click UPDATE button to submit updated Employee information.</li>
+                            <li>Click on CANCEL button to cancel editing and return to previous page.</li>
+                        </ul>
+                        <h5 id="employees-add-employee">Add New Employee</h5>
+                        <img src="interface/admin-add-new-employee.png" alt="admin add employees" class="interface">
+                        <ul class="decimal">
+                            <li>Insert all related Employee personal information. Fill the required input fields highlighted in red input box.</li>
+                            <li>Click SAVE button to submit Employee profile and information.</li>
+                            <li>Click on CANCEL button to cancel adding and visit previous page.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="attendance">
+                        <h3>Attendance</h3>
+                        <img src="interface/admin-attendance.png" alt="admin attendance" class="interface">
+                        <ul class="decimal">
+                            <li>Click Manual Entry button this will open a new page where you can add new employee attendances.</li>
+                            <li>Click Web Clock button this will open the web-based clock-in / clock-out page.</li>
+                            <li>Click on DELETE button to delete Employee attendance information.</li>
+                        </ul>
+                        <h5 id="admin-smartclock">Web-based Clock In/Out</h5>
+                        <img src="interface/webclock.png" alt="admin attendance smartclock" class="interface">
+                        <ul class="decimal">
+                            <li>Insert the Employee ID number</li>
+                            <li>Click on the Clock-In or Clock-Out button. A notification will show after clocking in or out.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="schedules">
+                        <h3>Schedules</h3>
+                        <img src="interface/admin-schedules.png" alt="admin schedules" class="interface">
+                        <ul class="decimal">
+                            <li>Click ADD button to add new Employee Schedule.</li>
+                            <li>Click EDIT button to edit Employee Schedule.</li>
+                            <li>Click ARCHIVE button to archive Employee Schedule.</li>
+                            <li>Click on DELETE button to delete Employee Schedule.</li>
+                        </ul>
+                        <h5 id="admin-adding-schedule">Add New Schedule</h5>
+                        <img src="interface/admin-add-schedule.png" alt="admin add schedule" class="interface">
+                        <ul class="decimal">
+                            <li>To add new Schedule, begin by selecting the Employee.</li>
+                            <li>Insert start and off time. Click on the clock icon to show the Time picker.</li>
+                            <li>Insert From and Until, the schedule period, using Date Picker. Click on the calendar icon to show the Date picker.</li>
+                            <li>Insert total work hours.</li>
+                            <li>Choose and check employee rest days.</li>
+                            <li>Click SAVE button to save new Employee Schedule.</li>
+                            <li>Click on CANCEL button to cancel, and return to previous page. </li>
+                        </ul>
+                        <h5 id="admin-editing-schedule">Edit Schedule</h5>
+                        <img src="interface/admin-edit-schedule.png" alt="admin edit schedule" class="interface">
+                        <ul class="decimal">
+                            <li>In editing Employee Schedule insert new schedule information. Then,</li>
+                            <li>Click UPDATE button to update Employee Schedule.</li>
+                            <li>Click on CANCEL button to cancel editing and return to previous page. </li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="leaves">
+                        <h3>Leave of Absence</h3>
+                        <img src="interface/admin-leaves.png" alt="admin leaves" class="interface">
+                        <ul class="decimal">
+                            <li>Click EDIT button to edit or approve employee leave request.</li>
+                            <li>Click on DELETE button to delete employee leave request.</li>
+                        </ul>
+                        <h5 id="admin-editing-leave">Edit Employee Leave</h5>
+                        <img src="interface/admin-edit-leave.png" alt="admin edit leave" class="interface">
+                        <ul class="decimal">
+                            <li>In editing employee leave request start from the status and choose pending, approve, or declined. Then,</li>
+                            <li>Click UPDATE button to update employee leave request.</li>
+                            <li>Click on CANCEL button to cancel, and return to previous page. </li>
+                        </ul>
+                        <h5 id="admin-adding-leavetype">Adding Leave Types</h5>
+                        <img src="interface/admin-leavetypes.png" alt="admin leave types" class="interface">
+                        <ul class="decimal">
+                            <li>In adding new Leave type begin by inserting leave name, credits, and terms. Then,</li>
+                            <li>Click SAVE button to add a Leave Type.</li>
+                            <li>To Delete a Leave Type. Click on DELETE button.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="reports">
+                        <h3>Reports</h3>
+                        <img src="interface/admin-reports.png" alt="admin reports" class="interface">
+                        <ul class="decimal">
+                            <li>Shows the List of reports, which is available for viewing and export.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="users">
+                        <h3>Users</h3>
+                        <img src="interface/admin-users.png" alt="admin users" class="interface">
+                        <ul class="decimal">
+                            <li>Click ADD button this will open a new page where you can register new Users.</li>
+                            <li>Click on EDIT button to edit User information.</li>
+                            <li>Click on DELETE button to delete User account.</li>
+                            <li>Click on ROLES button to Manage User Roles.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="settings">
+                        <h3>Settings</h3>
+                        <img src="interface/admin-settings.png" alt="admin settings" class="interface">
+                        <ul class="decimal">
+                            <li>Select your time zone.</li>
+                            <li>Choose your time format 12 hour or 24 hour.</li>
+                            <li>Enable or disable RFID Clock in and out feature.</li>
+                            <li>Enter your IP address to whitelist it from getting banned when you use IP restriction.</li>
+                            <li>Click on SAVE button to update settings.</li>
+                        </ul>
+                    </div>
+                    <div class="section-txt" id="troubleshooting">
+                        <h3>Troubleshooting</h3>
+                        <p>We are glad to help you if you have any questions relating to this application. We do our best to assist.</p>
+                        <div class="mr-auto ml-auto">
+                            <div class="mrg-btm-20">
+                                <h6><strong>Blank pages</strong></h6>
+                                <p>Blank pages can be caused by errors or if your server doesn’t meet the minimum requirements for Workday. To see exactly what the issue is, you need to see the error messages in the log file.</p>
+                                <p>The Laravel log file is located at <span class="code">application/storage/logs/</span></p>
+                            </div>
+                            <div class="mrg-btm-20">
+                                <h6><strong>Internal (500) Server Error</strong></h6>
+                                <p>This might be caused by a simple problem between your database connection and PHP version.</p>
+                                <p>You have to double check that your database connection is working, please check for miss-spelled database name, username, password, and host in the <span class="code">application/.env</span> file.</p>
+                                <p>500 server error also can be an issue with the PHP version you are using please review system requirements to check the right PHP version you need to install.</p>
+                            </div>
+                            <div class="mrg-btm-20">
+                                <h6><strong>Images are not displayed and page has no styling</strong></h6>
+                                <p>When images and front-end assets like css or js file is not loaded there can be problem in file permissions.</p>
+                                <p>You have to make sure that correct file permissions are used in your server, folders must be set to <span class="code">775</span>, files must be set to <span class="code">644</span> permissions, with exceptions to <strong>application/storage</strong> folder where this folder must be writable.</p>
+                            </div>
+                        </div>
+                        <p><i>If you have any questions that are beyond the scope of this help file, please feel free to write us an email or contact us via our Codecanyon user page.</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
